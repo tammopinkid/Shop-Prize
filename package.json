@@ -1,0 +1,34 @@
+{
+  "name": "shop-prize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "WEBPACK_ENV=dev webpack --progress --colors",
+    "build": "WEBPACK_ENV=production webpack",
+    "server": "node server.js"
+  },
+  "keywords": [
+    "Shop",
+    "finder"
+  ],
+  "author": "Bodin Srisompong",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^4.8.1",
+    "vue": "^2.5.13",
+    "vuefire": "^1.4.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-async-to-generator": "6.24.1",
+    "babel-plugin-transform-es2015-arrow-functions": "6.22.0",
+    "babel-preset-es2015": "6.24.1",
+    "express": "^4.16.2",
+    "html-webpack-plugin": "^2.30.1",
+    "nodemon": "^1.14.7",
+    "npm-run-parallel": "^0.6.0",
+    "webpack": "^3.10.0"
+  }
+}
