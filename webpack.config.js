@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
+var vueLoaderConfig = require('./vue-loader.conf')
 
 // Naming and path settings
 var appName = 'app'
@@ -65,7 +66,12 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: vueLoaderConfig
+      },
+      {
+        test: /\.s[a|c]ss$/,
+        loader: 'style!css!sass'
       }
     ]
   },
