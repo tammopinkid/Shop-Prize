@@ -1,4 +1,5 @@
 const state = {
+  activeCategory: null,
   all: [
     {
       name: 'สื่อบันเทิงภายในบ้าน',
@@ -52,13 +53,32 @@ const state = {
     }
   ]
 }
+
+const actions = {
+  activateCategory ({commit, rootState}, category) {
+    rootState.activeCategory = category.cat_id
+    commit('activateCategory', category.cat_id)
+  }
+}
+
+const mutations = {
+  activateCategory (state, catId) {
+    state.activeCategory = catId
+  }
+}
+
 const getters = {
   allCategories (state) {
     return state.all
+  },
+  activeCategory (state) {
+    return state.activeCategory
   }
 }
 
 export default {
   state,
+  actions,
+  mutations,
   getters
 }

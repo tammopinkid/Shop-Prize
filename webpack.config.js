@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 var path = require('path')
 var vueLoaderConfig = require('./vue-loader.conf')
 
@@ -15,7 +16,9 @@ var plugins = [
     template: 'index.html',
     inject: true,
     chunksSortMode: 'dependency'
-  })
+  }), new CopyWebpackPlugin([{
+    from: 'static'
+  }])
 ]
 var env = process.env.WEBPACK_ENV
 
