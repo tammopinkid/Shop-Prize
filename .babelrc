@@ -1,9 +1,14 @@
 {
-    "presets": [
-        "es2015"
-    ],
-    "plugins": [
-        "transform-es2015-arrow-functions",
-        "transform-async-to-generator"
-    ]
+  "presets": [
+    ["env", { "modules": false }],
+    "stage-2"
+  ],
+  "plugins": ["transform-runtime"],
+  "comments": false,
+  "env": {
+    "test": {
+      "presets": ["env", "stage-2"],
+      "plugins": [ "istanbul" ]
+    }
+  }
 }

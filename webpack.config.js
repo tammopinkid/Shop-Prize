@@ -34,7 +34,7 @@ if (env === 'production') {
   }))
 
   appName = appName + '.min.js'
-  exportPath = path.resolve(__dirname, './build')
+  exportPath = path.resolve(__dirname, './public')
 } else {
   appName = appName + '.js'
 }
