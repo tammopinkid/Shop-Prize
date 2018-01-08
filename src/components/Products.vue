@@ -42,7 +42,7 @@ export default {
 <style lang="scss">
 $spinner-width: 120px;
 .products-container {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .before-discount {
   color: grey;
@@ -61,6 +61,7 @@ $spinner-width: 120px;
   background-color: rgba(0, 0, 0, 0.3);
   top: 0;
   left: 0;
+  z-index: 999;
   &:before {
     content: '';
     position: absolute;

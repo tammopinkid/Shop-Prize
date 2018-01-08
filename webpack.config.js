@@ -36,7 +36,7 @@ if (env === 'production') {
     }
   }))
 
-  appName = appName + '.min.js'
+  appName = appName + '.min.js?v=' + require('./package.json').version
   exportPath = path.resolve(__dirname, './public')
 } else {
   appName = appName + '.js'
@@ -51,31 +51,31 @@ module.exports = {
   },
   module: {
     loaders: [{
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [path.resolve(__dirname, './src')],
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
-      },
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
-        }
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: vueLoaderConfig
-      },
-      {
-        test: /\.s[a|c]ss$/,
-        loader: 'style!css!sass'
+      test: /\.(js|vue)$/,
+      loader: 'eslint-loader',
+      enforce: 'pre',
+      include: [path.resolve(__dirname, './src')],
+      options: {
+        formatter: require('eslint-friendly-formatter')
       }
+    },
+    {
+      test: /\.js$/,
+      exclude: /(node_modules|bower_components)/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015']
+      }
+    },
+    {
+      test: /\.vue$/,
+      loader: 'vue-loader',
+      options: vueLoaderConfig
+    },
+    {
+      test: /\.s[a|c]ss$/,
+      loader: 'style!css!sass'
+    }
     ]
   },
   resolve: {
