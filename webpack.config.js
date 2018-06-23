@@ -75,6 +75,19 @@ module.exports = {
     {
       test: /\.s[a|c]ss$/,
       loader: 'style!css!sass'
+    },
+    {
+      test: /\.(gif|png|jpe?g|svg)$/i,
+      use: [
+        'file-loader',
+        {
+          loader: 'image-webpack-loader',
+          options: {
+            bypassOnDebug: true,
+            disable: true
+          }
+        }
+      ]
     }
     ]
   },
